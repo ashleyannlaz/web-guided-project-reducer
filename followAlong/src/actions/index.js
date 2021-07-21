@@ -11,3 +11,7 @@ export const setEditing = (isEditing) => {
 export const setTitle = (title) => {
     return { type: SET_TITLE, payload: title}
 }
+
+export const setNewTitleText = (newTitleText) => {
+    return { type: SET_NEW_TITLE_TEXT, payload: newTitleText}
+}
