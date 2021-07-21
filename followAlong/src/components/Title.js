@@ -11,13 +11,13 @@ const Title = () => {
   const handleChanges = e => {
     setNewTitleText(e.target.value);
   };
-
+  console.log(state)
   return (
     <div>
-      {!editing ? (
+      {!state.editing ? (
         <h1>
-          {title}{' '}
-          <i onClick={() => setEditing(!editing)} className="far fa-edit" />
+          {state.title}{' '}
+          <i onClick={() => setEditing(!state.editing)} className="far fa-edit" />
         </h1>
       ) : (
         <div>
@@ -25,12 +25,12 @@ const Title = () => {
             className="title-input"
             type="text"
             name="newTitleText"
-            value={newTitleText}
+            value={state.newTitleText}
             onChange={handleChanges}
           />
           <button
             onClick={() => {
-              setTitle(newTitleText);
+              setTitle(state.newTitleText);
               setEditing(false);
             }}
           >
