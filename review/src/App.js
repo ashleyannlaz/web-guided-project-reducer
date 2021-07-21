@@ -1,6 +1,6 @@
 import React, { useReducer } from "react";
 import reducer, { intialState } from './reducers/calcReducer';
-import { addAction, subtractAction, addToMemoryAction} from './actions/calcActions'
+import { addAction, subtractAction, addToMemoryAction, clearAction} from './actions/calcActions'
 import "./styles.css";
 
 
@@ -30,6 +30,12 @@ export default function App() {
     dispatch(subtractAction(15))
   }
 
+  const handleClear = () => {
+    dispatch(clearAction())
+  }
+
+
+
   console.log(state)
   return (
     <div className="App">
@@ -40,6 +46,9 @@ export default function App() {
       </button>
       <button type="button" onClick={handleSubtract} className="btn">
         - 15
+      </button>
+      <button type="button" onClick={handleClear} className="btn">
+        CE
       </button>
     </div>
   );
