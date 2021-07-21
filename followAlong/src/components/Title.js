@@ -1,9 +1,10 @@
 import React, { useState, useReducer } from 'react';
+import reducer, {initialState} from '../reducers';
 
 const Title = () => {
-  const [title, setTitle] = useState('Hello earthlings!');
-  const [editing, setEditing] = useState(false);
-  const [newTitleText, setNewTitleText] = useState('');
+  // const [title, setTitle] = useState('Hello earthlings!');
+  // const [editing, setEditing] = useState(false);
+  // const [newTitleText, setNewTitleText] = useState('');
 
   const handleChanges = e => {
     setNewTitleText(e.target.value);
