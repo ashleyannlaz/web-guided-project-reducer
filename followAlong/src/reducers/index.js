@@ -1,4 +1,4 @@
-export const intitalState = {
+export const initialState = {
     title: 'Hello earthlings!',
     editing: false,
     newTitleText: ''

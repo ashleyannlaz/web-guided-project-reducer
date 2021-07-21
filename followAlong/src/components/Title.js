@@ -6,6 +6,8 @@ const Title = () => {
   // const [editing, setEditing] = useState(false);
   // const [newTitleText, setNewTitleText] = useState('');
 
+  const [state, dispatch] = useReducer(reducer, initialState)
+
   const handleChanges = e => {
     setNewTitleText(e.target.value);
   };
