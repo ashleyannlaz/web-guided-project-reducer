@@ -1,5 +1,6 @@
 import React, { useState, useReducer } from 'react';
 import reducer, {initialState} from '../reducers';
+import { setEditing } from '../actions';
 
 const Title = () => {
   // const [title, setTitle] = useState('Hello earthlings!');
@@ -11,13 +12,14 @@ const Title = () => {
   const handleChanges = e => {
     setNewTitleText(e.target.value);
   };
+
   console.log(state)
   return (
     <div>
       {!state.editing ? (
         <h1>
           {state.title}{' '}
-          <i onClick={() => setEditing(!state.editing)} className="far fa-edit" />
+          <i onClick={() => dispatch(setEditing(!state.editing))} className="far fa-edit" />
         </h1>
       ) : (
         <div>
@@ -31,7 +33,7 @@ const Title = () => {
           <button
             onClick={() => {
               setTitle(state.newTitleText);
-              setEditing(false);
+              dispatch(setEditing(false));
             }}
           >
             Update title
