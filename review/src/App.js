@@ -21,13 +21,18 @@ export default function App() {
   // console.log(currentState);
   // currentState = reducer(currentState, addToMemoryAction())
   // console.log(currentState);
+  const handleClick = () => {
+    // dispatch( { type: ADD_ACTION, payload: input})
+    dispatch(addAction(5))
+  }
+
   console.log(state)
   return (
     <div className="App">
       <textarea rows="1" value={state.currentValue} id="total" type="text" name="ans"></textarea>
       <br />
-      <button type="button" className="btn">
-        +
+      <button type="button" onClick={handleClick} className="btn">
+        + 5
       </button>
     </div>
   );
