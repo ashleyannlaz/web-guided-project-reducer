@@ -26,6 +26,10 @@ export default function App() {
     dispatch(addAction(5))
   }
 
+  const handleSubtract = () => {
+    dispatch(subtractAction(15))
+  }
+
   console.log(state)
   return (
     <div className="App">
@@ -33,6 +37,9 @@ export default function App() {
       <br />
       <button type="button" onClick={handleClick} className="btn">
         + 5
+      </button>
+      <button type="button" onClick={handleSubtract} className="btn">
+        - 15
       </button>
     </div>
   );
