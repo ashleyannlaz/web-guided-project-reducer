@@ -1,6 +1,6 @@
 import React, { useState, useReducer } from 'react';
 import reducer, {initialState} from '../reducers';
-import { setEditing } from '../actions';
+import { setEditing, setNewTitleText, setTitle } from '../actions';
 
 const Title = () => {
   // const [title, setTitle] = useState('Hello earthlings!');
@@ -10,7 +10,7 @@ const Title = () => {
   const [state, dispatch] = useReducer(reducer, initialState)
 
   const handleChanges = e => {
-    setNewTitleText(e.target.value);
+    dispatch(setNewTitleText(e.target.value));
   };
 
   console.log(state)
@@ -32,7 +32,7 @@ const Title = () => {
           />
           <button
             onClick={() => {
-              setTitle(state.newTitleText);
+              dispatch(setTitle(state.newTitleText));
               dispatch(setEditing(false));
             }}
           >
