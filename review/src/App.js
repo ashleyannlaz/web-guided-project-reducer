@@ -24,7 +24,7 @@ export default function App() {
   console.log(state)
   return (
     <div className="App">
-      <textarea rows="1" value="0" id="total" type="text" name="ans"></textarea>
+      <textarea rows="1" value={state.currentValue} id="total" type="text" name="ans"></textarea>
       <br />
       <button type="button" className="btn">
         +
