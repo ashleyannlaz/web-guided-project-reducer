@@ -1,3 +1,5 @@
+import { SET_EDITING } from '../actions/index'
+
 export const initialState = {
     title: 'Hello earthlings!',
     editing: false,
@@ -16,7 +18,7 @@ const reducer = (state, action) => {
     switch(action.type) {
         case('SET_TITLE'): 
             return state
-        case('SET_EDITING'): 
+        case(SET_EDITING): 
             return {...state, editing: action.payload}
         case('SET_NEW_TITLE_TEXT'): 
             return state
