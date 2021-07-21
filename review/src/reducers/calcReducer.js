@@ -1,3 +1,8 @@
+export const intialState = {
+  currentValue: 0,
+  memory: 0
+}
+
 const reducer = (state, action) => {
     switch (action.type) {
       case "ADD":
