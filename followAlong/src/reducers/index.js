@@ -1,4 +1,4 @@
-import { SET_EDITING } from '../actions/index'
+import { SET_EDITING } from '../actions'
 
 export const initialState = {
     title: 'Hello earthlings!',
@@ -19,7 +19,7 @@ const reducer = (state, action) => {
         case('SET_TITLE'): 
             return state
         case(SET_EDITING): 
-            return {...state, editing: action.payload}
+            return ({...state, editing: action.payload})
         case('SET_NEW_TITLE_TEXT'): 
             return state
         default: 
